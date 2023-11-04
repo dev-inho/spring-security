@@ -2,15 +2,15 @@ package com.inho.security.domain.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.http.HttpStatus;
 
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-@Data
-public class SignUpResultDTO {
-    private boolean isSuccess;
-    private int code;
+@Getter
+public class ErrorResponseDTO {
+    private int status = HttpStatus.BAD_REQUEST.value();
     private String msg;
 }
